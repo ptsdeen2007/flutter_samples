@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
-void main() => runApp(MyApp());
+void main(){
+   return runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -39,8 +42,14 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+        statusBarColor: Theme.of(context).primaryColor
+    ));
     var accentColor2 = Theme.of(context).accentColor;
     return Scaffold(
+      /*appBar: AppBar(
+        title: Text("My title"),
+      ),*/
         body: ListView(
       children: <Widget>[
         Container(
@@ -67,11 +76,14 @@ class _MyHomePageState extends State<MyHomePage> {
                             ),
                             alignment: Alignment.centerLeft,
                           ),
-                          Text(
-                            "This text is very very very very very very very very very very very very very very very very very very very very very very very very very long",
-                            overflow: TextOverflow.ellipsis,
-                            maxLines: 1,
-                            style: TextStyle(color: Colors.white),
+                          Align(
+                            child: Text(
+                              "vk padi tippu nagar",
+                              overflow: TextOverflow.ellipsis,
+                              maxLines: 1,
+                              style: TextStyle(color: Colors.white),
+                            ),
+                            alignment: Alignment.centerLeft,
                           ),
                         ],
                       ),
@@ -91,7 +103,16 @@ class _MyHomePageState extends State<MyHomePage> {
               ],
             ),
           ),
-        )
+        ),
+        Container(
+          color: Colors.blueAccent  ,
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text("replace with searchable "),
+          )
+        ),
+
+        SizedBox(height: 5500,)
       ],
     )
         // This trailing comma makes auto-formatting nicer for build methods.
