@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:ftr_sample_works/MyMap.dart';
+
+import 'LoginPage.dart';
+import 'LoginPage2.dart';
 
 void main(){
    return runApp(MyApp());
@@ -17,7 +19,9 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
 //      home: MyHomePage(title: 'Demo Home Page'),
-      home: MyMap(),
+//      home: LoginPage(),
+//      home: MyApp1(),
+      home: LoginPage2(),
     );
   }
 }
